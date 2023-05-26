@@ -1,0 +1,78 @@
+﻿@model IDGS902_Tema1.Models.Diccionario
+
+@{
+    ViewBag.Title = "RegistrarDiccionario";
+    
+}
+
+<h2>Registrar palabras</h2>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-6">
+            @using (Html.BeginForm())
+            {
+                <div class="formulario-diccionario">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Espanol, htmlAttributes:
+                        new { @class = "control-label col-md-2" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Espanol, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Ingles, htmlAttributes:
+                        new { @class = "control-label col-md-2" })
+
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Ingles, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" name="name" value="Registrar" class="btn btn-outline-success" />
+                        </div>
+                    </div>
+
+                </div>
+            }
+        <br />
+            <div>
+                <form action="/Diccionario/BuscarDiccionario">
+                    <button type="submit" class="btn btn-primary">Buscar color</button>
+                </form>
+            </div>
+
+        </div>
+        <br />
+        <div class="col-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ingles (English)</th>
+                        <th>Español (Spanish)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach((string ing, string esp) in ViewBag.Palabras as List<(string, string)>)
+                    {
+                        <tr>
+                            <td>@ing</td>
+                            <td>@esp</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

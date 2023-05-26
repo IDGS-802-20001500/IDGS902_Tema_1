@@ -1,0 +1,9 @@
+pink:rosa
+black:negro
+grey:gris
+green:verde
+apple:manzana
+ball:balon
+red:rojo
+viollet:violeta
+yellow:amarillo

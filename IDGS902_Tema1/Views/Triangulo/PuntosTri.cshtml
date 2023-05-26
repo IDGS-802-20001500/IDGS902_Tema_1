@@ -1,0 +1,97 @@
+﻿@model IDGS902_Tema1.Models.Triangulos
+
+@{
+    ViewBag.Title = "PuntosTri";
+}
+
+<h2>Calcular Triangulo</h2>
+<hr />
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+
+            <div class="col-4">
+                <h5>Punto A</h5>
+
+                @Html.LabelFor(model => model.X1, htmlAttributes:
+                           new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.X1, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+                <br />
+
+                @Html.LabelFor(model => model.Y1, htmlAttributes:
+                          new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Y1, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+
+            </div>
+
+            <div class="col-4">
+                <h5>Punto B</h5>
+
+                @Html.LabelFor(model => model.X2, htmlAttributes:
+                           new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.X2, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+                <br />
+
+                @Html.LabelFor(model => model.Y2, htmlAttributes:
+                          new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Y2, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+
+            </div>
+
+            <div class="col-4">
+                <h5>Punto C</h5>
+
+                @Html.LabelFor(model => model.X3, htmlAttributes:
+                           new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.X3, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+                <br />
+
+                @Html.LabelFor(model => model.Y3, htmlAttributes:
+                          new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Y3, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+
+            </div>
+
+        </div>
+        <br />
+        <div>
+            <button type="submit" class="btn btn-success">Calcular</button>
+        </div>
+    }
+
+</div>
+<br />
+<hr />
+<br />
+<h2>Triangulo: @ViewBag.Triangulo</h2>
+<br />
+<h2>Área: @ViewBag.Area <i>u²</i></h2>
+<br />
+<h2>Perimetro: @ViewBag.Perimetro <i>u</i></h2>

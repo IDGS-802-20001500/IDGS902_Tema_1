@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "CajasInput";
+    var cajas = ViewBag.cajas as int?;
+}
+
+<h2>CajasInput</h2>
+
+
+<form action="/Pruebas2/CajasInput" method="post">
+    <label>Cantidad de números</label>
+    <input type="number" min="2" name="cantidad" class="form-control" />
+    <br />
+    <input class="btn btn-outline-success" type="submit" value="Generar" />
+</form>
+
+<hr />
+
+<h2>Números</h2>
+<br />
+
+
+<div>
+    @if (cajas != null)
+    {
+        using (Html.BeginForm("Promedio", "Pruebas2", FormMethod.Post))
+        {
+            for (var i = 0; i < cajas.Value; i++)
+            {
+                <label>Numero @(i+1):</label>
+                <input type="number" min="0" class="form-control" name="num[@i]" />
+                <br />
+            }
+            <button type="submit" class="btn btn-outline-dark">Calcular</button>
+        }
+    }
+
+
+</div>
+
+
+
+
+

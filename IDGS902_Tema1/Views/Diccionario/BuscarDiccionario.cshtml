@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "BuscarDiccionario";
+}
+
+<h2>Buscar en diccionario</h2>
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label class="form-label"><b>Buscar:</b></label>
+                    <input type="text" class="form-control" name="buscarPalabra" />
+                </div>
+                <br />
+                <div class="radio-group">
+                    <input type="radio" name="rbtnIdioma" value="en" checked />
+                    <label class="form-label" for="rbtnIdioma">Ingles (English)</label>
+                    <br />
+                    <input type="radio" name="rbtnIdioma" value="esp" />
+                    <label class="form-label" for="rbtnIdioma">Español (Spanish)</label>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-warning">Buscar</button>
+            }
+        <br />
+            <form action="/Diccionario/RegistrarDiccionario">
+                <button type="submit" class="btn btn-info">Registrar</button>
+            </form>
+        </div>
+        <div class="col-6" style="border-left: 2px solid rgba(0, 0, 0, 0.35); padding: 10px;">
+            <h2>Traducción (Translate): @ViewBag.Buscar</h2>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model IDGS902_Tema1.Models.Calculos
+
+@{
+    ViewBag.Title = "Puntos";
+}
+
+<h2>Puntos</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/Nuevo/Puntos" method="post">
+                <label> X1:</label>
+                <br />
+                <input type="text" name="x1" value="" />
+                <br />
+                <label> X2:</label>
+                <br />
+                <input type="text" name="x2" value="" />
+                <br />
+                <label> Y1:</label>
+                <br />
+                <input type="text" name="y1" value="" />
+                <br />
+                <label> Y2:</label>
+                <br />
+                <input type="text" name="y2" value="" />
+                <br />
+                <input type="submit" name="name" value="Calcular" />
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>Distancia es: @ViewBag.Res</h1>
+        </div>
+    </div>
+</div>
