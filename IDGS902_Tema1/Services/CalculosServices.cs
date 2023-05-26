@@ -21,7 +21,6 @@ namespace IDGS902_Tema1.Services
             }
             else if ((x1 == y1) && (x2 == y2) && (x3 == y3))
             {
-
                 tipoTri = "No es un triangulo";
             }
             else
